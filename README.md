@@ -6,7 +6,7 @@ This project implements a simple message management system using Flask and SQLit
 ## Getting Started
 ### Prerequisites
 
--   Python 3.11.5 (Or any version after 3.7)
+-   Python 3.11.5 (or any version from 3.7 onwards)
 -   Virtual Environment (venv) (Optional, but recommended)
 ### Overview
 The API provides routes to:
