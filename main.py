@@ -23,8 +23,11 @@ def add_message():
 @app.route("/GetMessage", methods=["GET"])
 def get_message():
     application_id, session_id, message_id = get_params_url()
+    # if all the parameters are None, return 400
+    if all([not application_id, not session_id, not message_id]):
+        return jsonify({"error": "Missing required parameters"}), 400
     message = db.get_message(application_id, session_id, message_id)
-    return jsonify(message) if message else jsonify({"error": "Message not found"}), 404
+    return (jsonify(message), 200) if message else (jsonify({"error": "Message not found"}), 404)
 
 
 @app.route("/DeleteMessage", methods=["DELETE"])
