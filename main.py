@@ -15,7 +15,7 @@ def add_message():
     message_id = data.get('message_id')
     participants = str(data.get('participants'))
     content = data.get('content')
-    if None in [application_id, session_id, message_id, participants, content]:
+    if None in (application_id, session_id, message_id, participants, content):
         return jsonify({"error": "Missing required parameters"}), 400
     db.add_message(application_id, session_id, message_id, participants, content)
     return jsonify({"status": "OK"}), 200
