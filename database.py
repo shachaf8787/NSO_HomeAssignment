@@ -17,13 +17,13 @@ class Database:
         self.conn.commit()
 
     def get_message(self, application_id, session_id, message_id):
-        """Get message from database"""
-        self.c.execute("SELECT * FROM messages WHERE application_id=? AND session_id=? AND message_id=?",
+        """Get message from database, by application_id OR session_id OR message_id"""
+        self.c.execute("SELECT * FROM messages WHERE application_id=? OR session_id=? OR message_id=?",
                     (application_id, session_id, message_id))
-        return self.c.fetchone()
+        return self.c.fetchall()
 
     def delete_message(self, application_id, session_id, message_id):
         """Delete message from database"""
-        self.c.execute("DELETE FROM messages WHERE application_id=? AND session_id=? AND message_id=?",
+        self.c.execute("DELETE FROM messages WHERE application_id=? OR session_id=? OR message_id=?",
                     (application_id, session_id, message_id))
         self.conn.commit()
