@@ -29,7 +29,12 @@ def get_message():
 
 @app.route("/DeleteMessage", methods=["DELETE"])
 def delete_message():
-    return "OK"
+    try:
+        application_id, session_id, message_id = get_params_url()
+        db.delete_message(application_id, session_id, message_id)
+    except:
+        return jsonify({"error": "Message not found"}), 404
+    return jsonify({"status": "OK"}), 200
 
 def get_params_url():
     """Get parameters from url"""
