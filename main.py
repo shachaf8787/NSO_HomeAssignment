@@ -34,9 +34,16 @@ def get_message():
 def delete_message():
     try:
         application_id, session_id, message_id = get_params_url()
+        if all([not application_id, not session_id, not message_id]):
+            raise Exception("Missing required parameters")
         db.delete_message(application_id, session_id, message_id)
-    except:
-        return jsonify({"error": "Message not found"}), 404
+    except Exception as e:
+        if "Message not found" in str(e):
+            return jsonify({"error": "Message not found"}), 404
+        elif "Missing required parameters" in str(e):
+            return jsonify({"error": "Missing required parameters"}), 400
+        else:
+            return jsonify({"error": "Internal server error"}), 500
     return jsonify({"status": "OK"}), 200
 
 def get_params_url():
