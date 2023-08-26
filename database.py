@@ -24,6 +24,9 @@ class Database:
 
     def delete_message(self, application_id, session_id, message_id):
         """Delete message from database"""
-        self.c.execute("DELETE FROM messages WHERE application_id=? OR session_id=? OR message_id=?",
-                    (application_id, session_id, message_id))
-        self.conn.commit()
+        if self.get_message(application_id, session_id, message_id):
+            self.c.execute("DELETE FROM messages WHERE application_id=? OR session_id=? OR message_id=?",
+                        (application_id, session_id, message_id))
+            self.conn.commit()
+        else:
+            raise Exception("Message not found")
