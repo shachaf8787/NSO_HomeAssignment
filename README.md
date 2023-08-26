@@ -17,19 +17,20 @@ The messages are stored in a SQLite database `messages.db`.
 
 ### Installation
 1. Clone the repository:
-`git clone https://github.com/shachaf8787/NSO_HomeAssignment`
+> `git clone https://github.com/shachaf8787/NSO_HomeAssignment`
 `cd NSO_HomeAssignment`
 
 2. (Optional) Create and activate a virtual environment:
 `python -m venv venv`
-`.\venv\Scripts\activate      # On Linux: source venv/bin/activate `
+> `python -m venv venv`
+`.\venv\Scripts\activate      # On Linux: source venv/bin/activate ``.\venv\Scripts\activate      # On Linux: source venv/bin/activate `
 
 3. Install the required packages:
-`pip install -r requirements.txt`
+> `pip install -r requirements.txt`
 
-###Usage
+### Usage
 1. Run the Flask application:
-`python main.py`
+> `python main.py`
 
 2. The application will start running at http://localhost:5000.
 
@@ -40,7 +41,7 @@ The messages are stored in a SQLite database `messages.db`.
 |  /GetMessage |  GET  |  Retrieve messages based on application ID, session ID, or message ID. |
 | /DeleteMessage  |  DELETE  |  Delete messages based on application ID, session ID, or message ID. |
 
-###Running Tests
+### Running Tests
 (Optional) Run the test suite using pytest:
-`pytest tests/`
+> `pytest tests/`
 
