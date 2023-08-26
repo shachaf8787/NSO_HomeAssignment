@@ -5,7 +5,7 @@ class Database:
     """Class to manage database. Add message, get message, delete message"""
     
     def __init__(self):
-        self.conn = sqlite3.connect('messages.db')
+        self.conn = sqlite3.connect('messages.db', check_same_thread=False)
         self.c = self.conn.cursor()
         self.c.execute('''CREATE TABLE IF NOT EXISTS messages
             (application_id text, session_id text, message_id text, participants text, content text)''')
