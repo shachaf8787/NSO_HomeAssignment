@@ -1,5 +1,5 @@
 # NSO Home Exercise - Shachaf Chen
-[my email](shachaf8787@gmail.com "my email")
+[my email](shachaf8787@gmail.com "my email") <br> <br>
 This project implements a simple message management system using Flask and SQLite. It provides APIs to add, retrieve, and delete messages from a SQLite database.
 
 
@@ -17,15 +17,15 @@ The messages are stored in a SQLite database `messages.db`.
 
 ### Installation
 1. Clone the repository:
-> `git clone https://github.com/shachaf8787/NSO_HomeAssignment`
+> `git clone https://github.com/shachaf8787/NSO_HomeAssignment` <br>
 `cd NSO_HomeAssignment`
 
 2. (Optional) Create and activate a virtual environment:
 `python -m venv venv`
-> `python -m venv venv`
-`.\venv\Scripts\activate      # On Linux: source venv/bin/activate ``.\venv\Scripts\activate      # On Linux: source venv/bin/activate `
+> `python -m venv venv` <br>
+` \venv\Scripts\activate  # On Linux: source venv/bin/activate `
 
-3. Install the required packages:
+1. Install the required packages:
 > `pip install -r requirements.txt`
 
 ### Usage
